@@ -4,6 +4,7 @@ using System.Collections;
 public class CameraController : MonoBehaviour {
 
     public Transform follow;
+    public Transform light;
     public float edgeTolerance;    // between 0 and 1
     public float maxOffset;        // between 0 and 1
     public float maxMoveSpeed;
@@ -21,9 +22,8 @@ public class CameraController : MonoBehaviour {
         Vector3 center = new Vector3(follow.position.x, follow.position.y, this.transform.position.z);
 
         // Need to replace all this with Tobii stuff
-        Vector3 eyeViewPos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
-        Vector3 eyeWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 cameraMoveDir = (eyeWorldPos - center).normalized;
+        Vector3 eyeViewPos = Camera.main.WorldToViewportPoint(light.position);
+        Vector3 cameraMoveDir = (light.position - center).normalized;
         Vector3 speed = Vector3.zero;
 
         // If eye is out of bounds, move camera. speed is scaled to how far away from the tolerance it is.
