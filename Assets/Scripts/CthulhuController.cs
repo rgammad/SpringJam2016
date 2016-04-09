@@ -16,7 +16,6 @@ public class CthulhuController : MonoBehaviour {
 		hits = 0;
 		direction = new Vector3 (1f, 1f, 0);
 		playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
-		scared = true;
 
 
 	}
@@ -44,10 +43,10 @@ public class CthulhuController : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionEnter2D(Collider2D anything)
-	{
-		chooseDirection ();
-	}
+//	void OnCollisionEnter2D(Collider2D anything)
+//	{
+//		chooseDirection ();
+//	}
 
 	public void shootMonster()
 	{
@@ -67,9 +66,19 @@ public class CthulhuController : MonoBehaviour {
 
 	private void move()
 	{
-		this.transform.position += direction * speed * Time.deltaTime;
-		float angle = Mathf.Atan2 (direction.y, direction.x) * Mathf.Rad2Deg;
-		transform.rotation = Quaternion.AngleAxis (angle, Vector3.forward);
-		//this.transform.rotation = Quaternion.LookRotation (direction);
+		Vector3 rayDir3 = playerPos - this.transform.position;
+		Vector2 rayDir2 = new Vector2 (rayDir3.x, rayDir3.y);
+		Debug.DrawRay(this.transform.position, rayDir3, Color.red);
+		RaycastHit2D hit = Physics2D.Raycast (new Vector2 (this.transform.position.x, this.transform.position.y), rayDir2);
+
+		if (hit.collider.tag == "Player") {
+			this.transform.position += direction * speed * Time.deltaTime;
+			float angle = Mathf.Atan2 (direction.y, direction.x) * Mathf.Rad2Deg;
+			transform.rotation = Quaternion.AngleAxis (angle, Vector3.forward);
+
+		}
+
+		
+
 	}
 }
