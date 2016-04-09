@@ -5,7 +5,7 @@ public class CthulhuController : MonoBehaviour {
 
 	private int hits;
 	private GameObject current;
-	private bool scared;
+	public bool scared;
 	public int hitsTillScared;
 	public float speed;
 	private Vector3 direction;
