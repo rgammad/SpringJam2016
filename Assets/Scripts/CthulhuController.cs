@@ -14,7 +14,7 @@ public class CthulhuController : MonoBehaviour {
 	void Awake ()
 	{
 		hits = 0;
-		direction = new Vector3 (1f, 1f, 0);
+		direction = playerPos - this.transform.position;
 		playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
 
 
@@ -55,30 +55,38 @@ public class CthulhuController : MonoBehaviour {
 
 	private void chooseDirection()
 	{
-		direction = playerPos - this.transform.position;
-		direction = direction.normalized;
-		
+		Vector3 newDirection = playerPos - this.transform.position;
+
+
 		if (scared)
-			direction = -direction;
+			newDirection = -newDirection; 
 
+		Vector2 rayDir2 = (Vector2)newDirection;
+		Debug.DrawRay(this.transform.position, newDirection, Color.red);
+		RaycastHit2D hit = Physics2D.Raycast ((Vector2)this.transform.position, rayDir2, 5f);
 
+		if (hit.collider == null || hit.collider.tag == "Player") {
+				direction = newDirection;
+			} else if (hit.collider.tag == "Wall") {
+			
+			direction = pathAround (newDirection);
+			}
+
+		float angle = Mathf.Atan2 (direction.y, direction.x) * Mathf.Rad2Deg;
+		transform.rotation = Quaternion.AngleAxis (angle, Vector3.forward);
+		direction = direction.normalized;
+
+	}
+
+	private Vector3 pathAround(Vector3 target)
+	{
+		Vector3 tangent = Vector3.Cross (target, Vector3.forward);
+		return tangent;
 	}
 
 	private void move()
 	{
-		Vector3 rayDir3 = playerPos - this.transform.position;
-		Vector2 rayDir2 = new Vector2 (rayDir3.x, rayDir3.y);
-		Debug.DrawRay(this.transform.position, rayDir3, Color.red);
-		RaycastHit2D hit = Physics2D.Raycast (new Vector2 (this.transform.position.x, this.transform.position.y), rayDir2);
-
-		if (hit.collider.tag == "Player") {
-			this.transform.position += direction * speed * Time.deltaTime;
-			float angle = Mathf.Atan2 (direction.y, direction.x) * Mathf.Rad2Deg;
-			transform.rotation = Quaternion.AngleAxis (angle, Vector3.forward);
-
-		}
-
-		
+		this.transform.position += direction * speed * Time.deltaTime;
 
 	}
 }
