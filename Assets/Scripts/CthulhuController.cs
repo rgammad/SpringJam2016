@@ -5,22 +5,24 @@ public class CthulhuController : MonoBehaviour {
 
 	private int hits;
 	private GameObject current;
-	private bool scared;
+	public bool scared;
 	public int hitsTillScared;
 	public float speed;
 	private Vector3 direction;
+	private Vector3 playerPos;
 
 	void Awake ()
 	{
-		current = this;
 		hits = 0;
 		direction = new Vector3 (1f, 1f, 0);
+		playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
+		scared = true;
 
 
 	}
 	// Use this for initialization
 	void Start () {
-		InvokeRepeating ("chooseDirection", 2f, 2f);
+		//InvokeRepeating ("chooseDirection", 2f, 2f);
 	}
 	
 	// Update is called once per frame
@@ -28,6 +30,9 @@ public class CthulhuController : MonoBehaviour {
 		if (hits >= hitsTillScared)
 			scared = true;
 
+		//move
+		playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
+		chooseDirection ();
 		move ();
 	}
 
@@ -51,21 +56,20 @@ public class CthulhuController : MonoBehaviour {
 
 	private void chooseDirection()
 	{
+		direction = playerPos - this.transform.position;
+		direction = direction.normalized;
 		
-		if (!scared) 
-		{
+		if (scared)
+			direction = -direction;
 
 
-		} 
-		else 
-		{
-
-
-		}
 	}
 
 	private void move()
 	{
-		current.transform.position += direction * speed * Time.deltaTime;
+		this.transform.position += direction * speed * Time.deltaTime;
+		float angle = Mathf.Atan2 (direction.y, direction.x) * Mathf.Rad2Deg;
+		transform.rotation = Quaternion.AngleAxis (angle, Vector3.forward);
+		//this.transform.rotation = Quaternion.LookRotation (direction);
 	}
 }
