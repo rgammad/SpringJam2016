@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MovementScript : MonoBehaviour {
+public class Cthulhu : MonoBehaviour {
 
 	public float health;
 	public BoxCollider2D theBox;
-	public SpriteRenderer;
+	public SpriteRenderer spriteRender;
 
 	void Awake ()
 	{
