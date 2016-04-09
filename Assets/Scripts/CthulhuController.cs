@@ -44,7 +44,7 @@ public class CthulhuController : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionEnter2D(Collider2D anything)
+	void OnCollisionEnter2D(Collision2D anything)
 	{
 		chooseDirection ();
 	}
