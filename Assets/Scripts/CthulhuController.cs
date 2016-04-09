@@ -9,15 +9,13 @@ public class CthulhuController : MonoBehaviour {
 	public int hitsTillScared;
 	public float speed;
 	private Vector3 direction;
-	private GameObject player;
 	private Vector3 playerPos;
 
 	void Awake ()
 	{
 		hits = 0;
 		direction = new Vector3 (1f, 1f, 0);
-		player = GameObject.FindGameObjectWithTag ("Player");
-		playerPos = player.transform.position;
+		playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
 		scared = true;
 
 
@@ -33,8 +31,8 @@ public class CthulhuController : MonoBehaviour {
 			scared = true;
 
 		//move
-		playerPos = player.transform.position;
-		direction = chooseDirection ();
+		playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
+		chooseDirection ();
 		move ();
 	}
 
@@ -56,15 +54,13 @@ public class CthulhuController : MonoBehaviour {
 		++hits;
 	}
 
-	private Vector3 chooseDirection()
+	private void chooseDirection()
 	{
 		direction = playerPos - this.transform.position;
 		direction = direction.normalized;
 		
 		if (scared)
 			direction = -direction;
-
-		return direction;
 	}
 
 	private void move()
