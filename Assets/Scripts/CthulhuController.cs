@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MovementScript : MonoBehaviour {
+public class CthulhuController : MonoBehaviour {
 
 	public float health;
 	public BoxCollider2D theBox;
@@ -9,6 +9,8 @@ public class MovementScript : MonoBehaviour {
 
 	void Awake ()
 	{
+		health = 100.0f;
+		theBox.enabled = true;
 
 	}
 	// Use this for initialization
