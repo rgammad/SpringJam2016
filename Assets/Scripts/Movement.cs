@@ -18,18 +18,12 @@ public class Movement : MonoBehaviour
     void FixedUpdate()
     {
         Vector2 inputVector = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
+        rbody.velocity = inputVector * moveSpeed * Time.deltaTime;
 
-        // Raycast Mouse Looking
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit = new RaycastHit();
-        if (Physics.Raycast(ray, out hit, 100))
-        {
-            Vector3 hitPoint = hit.point;
-            Vector3 targetDir = hitPoint - transform.position;
-
-            float angle = Mathf.Atan2(targetDir.y, targetDir.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        }
-        rbody.velocity = inputVector * moveSpeed * Time.fixedDeltaTime;
+        // Rotate using mouse position
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 targetDir = mousePos - transform.position;
+        float angle = Mathf.Atan2(targetDir.y, targetDir.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 }
