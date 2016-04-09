@@ -41,7 +41,7 @@ public class CthulhuController : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collider2D anything)
 	{
-		//change direction
+		chooseDirection ();
 	}
 
 	public void shootMonster()
@@ -51,6 +51,7 @@ public class CthulhuController : MonoBehaviour {
 
 	private void chooseDirection()
 	{
+		
 		if (!scared) 
 		{
 
