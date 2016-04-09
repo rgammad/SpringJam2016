@@ -5,7 +5,7 @@ public class MovementScript : MonoBehaviour {
 
 	public float health;
 	public BoxCollider2D theBox;
-	public SpriteRenderer;
+	public SpriteRenderer sr;
 
 	void Awake ()
 	{
