@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class NewBehaviourScript : MonoBehaviour {
+public class MovementScript : MonoBehaviour {
 
     public float moveSpeed;
 
