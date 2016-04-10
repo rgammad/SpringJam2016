@@ -4,24 +4,44 @@ using System.Collections;
 public class BulletVelocity : MonoBehaviour {
 
     public float speed;
+    private Camera viewCamera;
+    private Vector2 target;
 
     void Start() {
         // Get the rigidbody component before you modify its values
         Rigidbody rb = GetComponent<Rigidbody>();
-
+        viewCamera = Camera.main;
+        target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Debug.Log(target.x + " " + target.y);
+        
+        
         // Has the projectile travel forward (in positive direction) along the Z-Axis
-        rb.velocity = transform.forward * speed;
+      //  rb.velocity =  * speed;
     }
 
     void Update() {
+        float step = speed * Time.deltaTime;
+       // Vector3 MousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, viewCamera.transform.position.x);
+        //transform.position = Vector3.MoveTowards(transform.position, Input.mousePosition, step);
+        
+        //Vector3 target = new Vector3(mouse.x, mouse.y, mouse.z);
+
+        transform.position = Vector2.MoveTowards(transform.position, target, step);
+        if ((transform.position.x == target.x) && (transform.position.y == target.y ))
+        {
+            Destroy(gameObject);
+        }
+        
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter2D(Collider2D other)
+
     {
-        if (other.GetComponent<Collider>().tag == "Wall")
+        
+        if (other.gameObject.tag == "Wall")
             Destroy(gameObject);
 
-        if (other.GetComponent<Collider>().tag == "Targets")
+        if (other.gameObject.tag == "Targets")
         {
             Destroy(gameObject);
         }
