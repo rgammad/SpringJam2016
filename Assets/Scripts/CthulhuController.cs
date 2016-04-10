@@ -14,6 +14,7 @@ public class CthulhuController : MonoBehaviour {
 	public float timeTillPenalty;
 	private float timeTillPenaltyReset;
 	private bool penalize = false;
+	private float timeTillDirectionChange = 10f;
 
 	void Awake ()
 	{
