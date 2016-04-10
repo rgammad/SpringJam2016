@@ -12,7 +12,7 @@ public class Controller : MonoBehaviour {
     private GameObject Cthulhu;
     private CthulhuController CthulhuScript;
 	public int energyRegen = 5;
-	public float maxHealth = 100.0;
+	public float maxHealth = 100.0f;
     
 
     // Firing
