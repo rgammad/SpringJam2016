@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CthulhuController : MonoBehaviour {
+public class OldCthulhuController : MonoBehaviour {
 
 	private int hits;
 	private GameObject current;
-	public bool scared = false;
+	public bool scared;
 	public int hitsTillScared;
 	public float speed;
 	private Vector3 direction;
@@ -14,7 +14,7 @@ public class CthulhuController : MonoBehaviour {
 	public float timeTillPenalty;
 	private float timeTillPenaltyReset;
 	private bool penalize = false;
-    private GazeAwareComponent aware;
+	private float timeTillDirectionChange = 10f;
 
 	void Awake ()
 	{
@@ -23,19 +23,19 @@ public class CthulhuController : MonoBehaviour {
 		playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
 		beingStaredAt = false;
 		timeTillPenaltyReset = timeTillPenalty;
+
+
 	}
 	// Use this for initialization
 	void Start () {
 		//InvokeRepeating ("chooseDirection", 2f, 2f);
-        aware = GetComponent<GazeAwareComponent>();
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (hits >= hitsTillScared) {
-			timeTillPenalty = timeTillPenaltyReset;
-			penalize = false;
+			
 			scared = true;
 			hits = 0;
 		}
@@ -45,32 +45,29 @@ public class CthulhuController : MonoBehaviour {
 		chooseDirection ();
 		move ();
 
-		if (aware.HasGaze)
+		if (beingStaredAt)
 			timeTillPenalty -= Time.deltaTime;
 
 		if (timeTillPenalty <= 0.0)
 			penalize = true;
-
 
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.gameObject.tag == "Light") {
-            Debug.Log("Shine on");
 			beingStaredAt = true;
 		}
 
 		if (other.gameObject.tag == "Bolt") {
 			++hits;
-            //Destroy(other.gameObject);
 		}
 	}
 
 	void OnTriggerExit2D(Collider2D lightCollision)
 	{
 		if (lightCollision.gameObject.tag == "Light") {
-            Debug.Log("Shine off");
+
 			timeTillPenalty = timeTillPenaltyReset;
 			beingStaredAt = false;
 			penalize = false;
@@ -161,8 +158,13 @@ public class CthulhuController : MonoBehaviour {
 
 	public bool penalty()
 	{
-        //Debug.Log("Penalty!!");
-		return penalize;
+		if (!scared)
+			return penalize;
+		else {
+			scared = false;
+			timeTillPenalty = timeTillPenaltyReset;
+			return false;
+		}
 	}
 
 	private float getAngle(Vector3 firstAngle, Vector3 secondAngle)
