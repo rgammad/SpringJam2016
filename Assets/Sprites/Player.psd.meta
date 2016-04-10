@@ -1,0 +1,651 @@
+fileFormatVersion: 2
+guid: d8009304d2be42b4c9df53c13501dea3
+timeCreated: 1460254512
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Legs_F
+    21300002: Legs_FR_0
+    21300004: Legs_FR_1
+    21300006: Legs_R
+    21300008: Legs_RB_0
+    21300010: Legs_RB_1
+    21300012: Legs_B
+    21300014: Legs_BL_0
+    21300016: Legs_BL_1
+    21300018: Legs_L
+    21300020: Legs_LF_0
+    21300022: Legs_LF_1
+    21300024: Legs_WF0
+    21300026: Legs_WF1
+    21300028: Legs_WF2
+    21300030: Legs_WF3
+    21300032: Legs_WR0
+    21300034: Legs_WR1
+    21300036: Legs_WR2
+    21300038: Legs_WL0
+    21300040: Legs_WL1
+    21300042: Legs_WL2
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: 1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Legs_F
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 85}
+        - {x: -37, y: 80}
+        - {x: -37, y: -127}
+        - {x: -34, y: -128}
+        - {x: 35, y: -128}
+        - {x: 35, y: 71}
+        - {x: 20, y: 85}
+    - name: Legs_FR_0
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11, y: -123}
+        - {x: 41, y: -123}
+        - {x: 41, y: 52}
+        - {x: 21, y: 86}
+        - {x: -33, y: 86}
+        - {x: -36, y: 81}
+        - {x: -36, y: -30}
+        - {x: -33, y: -123}
+        - {x: -27, y: -127}
+        - {x: -16, y: -127}
+        - {x: -9, y: -125}
+        - {x: -1, y: -107}
+        - {x: -1, y: -100}
+        - {x: -1, y: -106}
+    - name: Legs_FR_1
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 81}
+        - {x: -34, y: 71}
+        - {x: -34, y: -126}
+        - {x: -23, y: -128}
+        - {x: 32, y: -128}
+        - {x: 32, y: 81}
+    - name: Legs_R
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 25, y: 80}
+        - {x: 14, y: 88}
+        - {x: -24, y: 88}
+        - {x: -24, y: -116}
+        - {x: 27, y: -116}
+        - {x: 31, y: -115}
+        - {x: 31, y: -104}
+        - {x: 21, y: -96}
+    - name: Legs_RB_0
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 22, y: 86}
+        - {x: -15, y: 86}
+        - {x: -26, y: 84}
+        - {x: -30, y: 27}
+        - {x: -25, y: -5}
+        - {x: -33, y: -76}
+        - {x: -33, y: -97}
+        - {x: -14, y: -115}
+        - {x: -8, y: -116}
+        - {x: 30, y: -116}
+        - {x: 31, y: -115}
+        - {x: 31, y: -5}
+        - {x: 28, y: 79}
+    - name: Legs_RB_1
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34, y: 86}
+        - {x: -38, y: 77}
+        - {x: -38, y: -114}
+        - {x: 34, y: -114}
+        - {x: 34, y: 8}
+        - {x: 24, y: 86}
+      - - {x: 64, y: -104}
+        - {x: 64, y: -109}
+        - {x: 66, y: -113}
+        - {x: 71, y: -113}
+        - {x: 73, y: -112}
+        - {x: 73, y: -107}
+        - {x: 67, y: -104}
+      - - {x: 61, y: -50}
+        - {x: 65, y: -53}
+        - {x: 68, y: -52}
+        - {x: 68, y: -28}
+        - {x: 67, y: -27}
+        - {x: 64, y: -27}
+        - {x: 61, y: -28}
+      - - {x: 62, y: 82}
+        - {x: 61, y: 81}
+        - {x: 61, y: 76}
+        - {x: 62, y: 71}
+        - {x: 65, y: 71}
+        - {x: 68, y: 74}
+        - {x: 68, y: 81}
+        - {x: 65, y: 82}
+    - name: Legs_B
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 91}
+        - {x: -36, y: 76}
+        - {x: -36, y: -77}
+        - {x: -35, y: -110}
+        - {x: -29, y: -116}
+        - {x: 32, y: -116}
+        - {x: 33, y: -106}
+        - {x: 33, y: 91}
+    - name: Legs_BL_0
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 20, y: 84}
+        - {x: 8, y: 86}
+        - {x: -30, y: 86}
+        - {x: -36, y: 34}
+        - {x: -36, y: -111}
+        - {x: -31, y: -114}
+        - {x: -20, y: -114}
+        - {x: -3, y: -100}
+        - {x: -1, y: -53}
+        - {x: 3, y: -107}
+        - {x: 10, y: -114}
+        - {x: 34, y: -114}
+        - {x: 36, y: -66}
+        - {x: 36, y: 64}
+        - {x: 34, y: 80}
+      - - {x: -75, y: -113}
+        - {x: -70, y: -113}
+        - {x: -66, y: -112}
+        - {x: -66, y: -106}
+        - {x: -69, y: -104}
+        - {x: -75, y: -108}
+      - - {x: -68, y: -27}
+        - {x: -69, y: -29}
+        - {x: -70, y: -46}
+        - {x: -70, y: -52}
+        - {x: -69, y: -53}
+        - {x: -67, y: -53}
+        - {x: -63, y: -50}
+        - {x: -63, y: -28}
+        - {x: -66, y: -27}
+      - - {x: -70, y: 74}
+        - {x: -67, y: 71}
+        - {x: -64, y: 72}
+        - {x: -63, y: 79}
+        - {x: -65, y: 82}
+        - {x: -67, y: 82}
+        - {x: -70, y: 81}
+    - name: Legs_BL_1
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 24, y: 73}
+        - {x: 19, y: 86}
+        - {x: -24, y: 86}
+        - {x: -33, y: 84}
+        - {x: -33, y: -116}
+        - {x: 17, y: -116}
+        - {x: 31, y: -95}
+        - {x: 31, y: -58}
+        - {x: 29, y: 36}
+    - name: Legs_L
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 82}
+        - {x: -32, y: 80}
+        - {x: -32, y: -114}
+        - {x: 14, y: -114}
+        - {x: 19, y: -113}
+        - {x: 24, y: -30}
+        - {x: 24, y: 78}
+        - {x: 22, y: 82}
+    - name: Legs_LF_0
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 21, y: 73}
+        - {x: 14, y: 82}
+        - {x: -19, y: 82}
+        - {x: -26, y: 74}
+        - {x: -34, y: 1}
+        - {x: -34, y: -127}
+        - {x: 28, y: -127}
+        - {x: 32, y: -123}
+        - {x: 32, y: -29}
+        - {x: 24, y: 60}
+    - name: Legs_LF_1
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 27, y: 81}
+        - {x: 10, y: 85}
+        - {x: -40, y: 85}
+        - {x: -43, y: 70}
+        - {x: -43, y: -125}
+        - {x: -31, y: -128}
+        - {x: -4, y: -114}
+        - {x: -2, y: -106}
+        - {x: -2, y: -97}
+        - {x: 0, y: -94}
+        - {x: -2, y: -109}
+        - {x: 5, y: -119}
+        - {x: 11, y: -128}
+        - {x: 21, y: -128}
+        - {x: 32, y: -125}
+        - {x: 34, y: -35}
+        - {x: 34, y: 32}
+        - {x: 32, y: 59}
+    - name: Legs_WF0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25, y: 83}
+        - {x: -37, y: 80}
+        - {x: -37, y: -110}
+        - {x: -36, y: -117}
+        - {x: -5, y: -121}
+        - {x: -4, y: -121}
+        - {x: 0, y: -114}
+        - {x: 2, y: -88}
+        - {x: 2, y: -113}
+        - {x: 7, y: -121}
+        - {x: 33, y: -121}
+        - {x: 33, y: 83}
+    - name: Legs_WF1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 83}
+        - {x: -40, y: 70}
+        - {x: -40, y: -2}
+        - {x: -28, y: -125}
+        - {x: 31, y: -125}
+        - {x: 33, y: -124}
+        - {x: 33, y: 83}
+    - name: Legs_WF2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1, y: -60}
+        - {x: -2, y: -88}
+        - {x: -1, y: -111}
+        - {x: 3, y: -117}
+        - {x: 27, y: -117}
+        - {x: 36, y: -10}
+        - {x: 36, y: 71}
+        - {x: 26, y: 77}
+        - {x: 13, y: 81}
+        - {x: 4, y: 83}
+        - {x: -34, y: 83}
+        - {x: -34, y: -112}
+        - {x: -30, y: -121}
+        - {x: -9, y: -121}
+        - {x: -4, y: -116}
+        - {x: -2, y: -105}
+        - {x: -2, y: -58}
+    - name: Legs_WF3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1539
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34, y: 81}
+        - {x: -34, y: -127}
+        - {x: -1, y: -127}
+        - {x: 34, y: -114}
+        - {x: 39, y: -13}
+        - {x: 39, y: 70}
+        - {x: 22, y: 81}
+    - name: Legs_WR0
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 18, y: 88}
+        - {x: -12, y: 88}
+        - {x: -26, y: 85}
+        - {x: -54, y: -73}
+        - {x: -54, y: -115}
+        - {x: -49, y: -121}
+        - {x: -11, y: -121}
+        - {x: 0, y: -120}
+        - {x: 16, y: -121}
+        - {x: 66, y: -121}
+        - {x: 72, y: -119}
+        - {x: 72, y: -72}
+        - {x: 21, y: 87}
+      - - {x: 12, y: -102}
+        - {x: 9, y: -104}
+        - {x: 9, y: -107}
+        - {x: 14, y: -113}
+        - {x: 21, y: -113}
+        - {x: 22, y: -111}
+        - {x: 22, y: -105}
+        - {x: 19, y: -102}
+      - - {x: 47, y: -6}
+        - {x: 43, y: -6}
+        - {x: 42, y: -8}
+        - {x: 42, y: -12}
+        - {x: 45, y: -13}
+        - {x: 47, y: -13}
+        - {x: 49, y: -11}
+        - {x: 49, y: -7}
+    - name: Legs_WR1
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24, y: 85}
+        - {x: -24, y: -121}
+        - {x: 29, y: -121}
+        - {x: 32, y: -120}
+        - {x: 32, y: 5}
+        - {x: 26, y: 85}
+    - name: Legs_WR2
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -55, y: -7}
+        - {x: -55, y: -121}
+        - {x: 71, y: -121}
+        - {x: 71, y: -52}
+        - {x: 23, y: 81}
+        - {x: 15, y: 88}
+        - {x: -10, y: 88}
+        - {x: -24, y: 83}
+      - - {x: 11, y: -102}
+        - {x: 8, y: -104}
+        - {x: 8, y: -107}
+        - {x: 13, y: -113}
+        - {x: 20, y: -113}
+        - {x: 21, y: -111}
+        - {x: 21, y: -105}
+        - {x: 18, y: -102}
+      - - {x: 46, y: -6}
+        - {x: 42, y: -6}
+        - {x: 41, y: -8}
+        - {x: 41, y: -12}
+        - {x: 44, y: -13}
+        - {x: 46, y: -13}
+        - {x: 48, y: -11}
+        - {x: 48, y: -7}
+    - name: Legs_WL0
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 72, y: -113}
+        - {x: 72, y: -56}
+        - {x: 54, y: 30}
+        - {x: 40, y: 88}
+        - {x: -5, y: 88}
+        - {x: -54, y: -65}
+        - {x: -54, y: -120}
+        - {x: -50, y: -121}
+        - {x: -11, y: -121}
+        - {x: -2, y: -102}
+        - {x: 24, y: -121}
+        - {x: 69, y: -121}
+      - - {x: 0, y: -102}
+        - {x: -4, y: -107}
+        - {x: -4, y: -112}
+        - {x: -2, y: -113}
+        - {x: 6, y: -113}
+        - {x: 9, y: -108}
+        - {x: 9, y: -104}
+        - {x: 5, y: -102}
+      - - {x: -31, y: -6}
+        - {x: -31, y: -12}
+        - {x: -29, y: -13}
+        - {x: -25, y: -13}
+        - {x: -24, y: -12}
+        - {x: -24, y: -9}
+        - {x: -25, y: -6}
+    - name: Legs_WL1
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 85}
+        - {x: -15, y: 77}
+        - {x: -15, y: 59}
+        - {x: -9, y: -32}
+        - {x: -15, y: -81}
+        - {x: -15, y: -116}
+        - {x: -12, y: -121}
+        - {x: 41, y: -121}
+        - {x: 41, y: 85}
+    - name: Legs_WL2
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 62, y: -121}
+        - {x: 71, y: -114}
+        - {x: 71, y: -22}
+        - {x: 54, y: 87}
+        - {x: 54, y: 88}
+        - {x: -8, y: 88}
+        - {x: -55, y: -46}
+        - {x: -55, y: -121}
+        - {x: -12, y: -121}
+        - {x: -3, y: -102}
+        - {x: 22, y: -121}
+      - - {x: -1, y: -102}
+        - {x: -5, y: -107}
+        - {x: -5, y: -112}
+        - {x: -3, y: -113}
+        - {x: 5, y: -113}
+        - {x: 8, y: -108}
+        - {x: 8, y: -104}
+        - {x: 4, y: -102}
+      - - {x: -32, y: -6}
+        - {x: -32, y: -12}
+        - {x: -30, y: -13}
+        - {x: -26, y: -13}
+        - {x: -25, y: -12}
+        - {x: -25, y: -9}
+        - {x: -26, y: -6}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
