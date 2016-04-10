@@ -56,9 +56,10 @@ public class EventHandler : MonoBehaviour
             }
         }
         //forced boss event
-        child = Instantiate(events[0], spawnLocation[0].transform.position, Quaternion.identity) as GameObject;
-        child.transform.parent = transform.parent;
-
+        else {
+            child = Instantiate(events[0], spawnLocation[0].transform.position, Quaternion.identity) as GameObject;
+            child.transform.parent = transform.parent;
+        }
     }
 
     private void EventExit()
