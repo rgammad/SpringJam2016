@@ -5,7 +5,7 @@ public class CthulhuController : MonoBehaviour {
 
 	private int hits;
 	private GameObject current;
-	public bool scared;
+	public bool scared = false;
 	public int hitsTillScared;
 	public float speed;
 	private Vector3 direction;
@@ -14,7 +14,7 @@ public class CthulhuController : MonoBehaviour {
 	public float timeTillPenalty;
 	private float timeTillPenaltyReset;
 	private bool penalize = false;
-	private float timeTillDirectionChange = 10f;
+    private GazeAwareComponent aware;
 
 	void Awake ()
 	{
@@ -23,12 +23,11 @@ public class CthulhuController : MonoBehaviour {
 		playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
 		beingStaredAt = false;
 		timeTillPenaltyReset = timeTillPenalty;
-
-
 	}
 	// Use this for initialization
 	void Start () {
 		//InvokeRepeating ("chooseDirection", 2f, 2f);
+        aware = GetComponent<GazeAwareComponent>();
 
 	}
 	
@@ -44,7 +43,7 @@ public class CthulhuController : MonoBehaviour {
 		chooseDirection ();
 		move ();
 
-		if (beingStaredAt)
+		if (aware.HasGaze)
 			timeTillPenalty -= Time.deltaTime;
 
 		if (timeTillPenalty <= 0.0)
@@ -56,18 +55,20 @@ public class CthulhuController : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.gameObject.tag == "Light") {
+            Debug.Log("Shine on");
 			beingStaredAt = true;
 		}
 
 		if (other.gameObject.tag == "Bolt") {
 			++hits;
+            //Destroy(other.gameObject);
 		}
 	}
 
 	void OnTriggerExit2D(Collider2D lightCollision)
 	{
 		if (lightCollision.gameObject.tag == "Light") {
-
+            Debug.Log("Shine off");
 			timeTillPenalty = timeTillPenaltyReset;
 			beingStaredAt = false;
 			penalize = false;
@@ -158,10 +159,11 @@ public class CthulhuController : MonoBehaviour {
 
 	public bool penalty()
 	{
+        //Debug.Log("Penalty!!");
 		if (!scared)
 			return penalize;
 		else {
-			scared = false;
+			//scared = false;
 			timeTillPenalty = timeTillPenaltyReset;
 			return false;
 		}
