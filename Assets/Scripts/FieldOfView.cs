@@ -14,14 +14,15 @@ public class FieldOfView : MonoBehaviour
     [HideInInspector]
     public List<Transform> visibleTargets = new List<Transform>();  // Store the number of targets seen by the player
 
-    public float meshResolution;
-    public int edgeResolveIterations;
+    public float meshResolution = 10;
+
+    public int edgeResolveIterations = 4;
     public float edgeDstThreshold;
 
     public float maskCutawayDst = .1f;
 
     public MeshFilter viewMeshFilter;
-    Mesh viewMesh;
+    private Mesh viewMesh;
 
     void Start()
     {
@@ -31,7 +32,6 @@ public class FieldOfView : MonoBehaviour
 
         StartCoroutine("FindTargetsWithDelay", .2f);
     }
-
 
     IEnumerator FindTargetsWithDelay(float delay)
     {
@@ -64,6 +64,8 @@ public class FieldOfView : MonoBehaviour
             if (Vector3.Angle(transform.forward, dirToTarget) < viewAngle / 2)
             {
                 float dstToTarget = Vector3.Distance(transform.position, target.position);
+
+                // If Object's raycast isn't hitting a wall, add the target that's in its field of vision to visibleTargets
                 if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
                     visibleTargets.Add(target);
             }
@@ -94,7 +96,6 @@ public class FieldOfView : MonoBehaviour
                 }
 
             }
-
 
             viewPoints.Add(newViewCast.point);
             oldViewCast = newViewCast;
