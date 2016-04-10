@@ -63,7 +63,7 @@ public class CthulhuController : MonoBehaviour {
 
 		if (other.gameObject.tag == "Bolt") {
 			++hits;
-            //Destroy(other.gameObject);
+            Destroy(other.gameObject);
 		}
 	}
 
