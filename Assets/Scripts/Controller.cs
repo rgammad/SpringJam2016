@@ -15,7 +15,7 @@ public class Controller : MonoBehaviour {
 
     // Firing
     public GameObject projectile;   // The game object that will be instantiated
-    public int energyLeft = 64;
+    public int energyLeft = 100;
     public Light lt;
 
     public float fireRate;  // The rate of fire for the player
@@ -50,7 +50,10 @@ public class Controller : MonoBehaviour {
 
         }
 
-        bool random = CthulhuScript.penalty();
+        bool penalty = CthulhuScript.penalty();
+
+		if (penalty)
+			--energyLeft;
     }
 
     void FixedUpdate()
