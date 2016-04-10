@@ -33,8 +33,10 @@ public class CthulhuController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (hits >= hitsTillScared)
+		if (hits >= hitsTillScared) {
 			scared = true;
+			hits = 0;
+		}
 
 		//move
 		playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
@@ -50,10 +52,14 @@ public class CthulhuController : MonoBehaviour {
 
 	}
 
-	void OnTriggerEnter2D(Collider2D lightCollision)
+	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (lightCollision.gameObject.tag == "Light") {
+		if (other.gameObject.tag == "Light") {
 			beingStaredAt = true;
+		}
+
+		if (other.gameObject.tag == "Bolt") {
+			++hits;
 		}
 	}
 
@@ -127,6 +133,12 @@ public class CthulhuController : MonoBehaviour {
 
 	public bool penalty()
 	{
-		return penalize;
+		if (!scared)
+			return penalize;
+		else {
+			scared = false;
+			timeTillPenalty = timeTillPenaltyReset;
+			return false;
+		}
 	}
 }
