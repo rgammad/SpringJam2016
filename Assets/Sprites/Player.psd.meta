@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: d8009304d2be42b4c9df53c13501dea3
-timeCreated: 1460254512
+timeCreated: 1460256359
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -26,6 +26,10 @@ TextureImporter:
     21300038: Legs_WL0
     21300040: Legs_WL1
     21300042: Legs_WL2
+    21300044: Legs_WB0
+    21300046: Legs_WB1
+    21300048: Legs_WB2
+    21300050: Legs_WB3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -644,6 +648,96 @@ TextureImporter:
         - {x: -25, y: -12}
         - {x: -25, y: -9}
         - {x: -26, y: -6}
+    - name: Legs_WB0
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 83}
+        - {x: -36, y: 72}
+        - {x: -36, y: -38}
+        - {x: -18, y: -121}
+        - {x: -16, y: -121}
+        - {x: -4, y: -114}
+        - {x: 3, y: -105}
+        - {x: 2, y: -101}
+        - {x: 3, y: -102}
+        - {x: 3, y: -113}
+        - {x: 8, y: -121}
+        - {x: 34, y: -121}
+        - {x: 34, y: 83}
+    - name: Legs_WB1
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 30, y: 65}
+        - {x: 26, y: 77}
+        - {x: 12, y: 83}
+        - {x: -20, y: 83}
+        - {x: -39, y: 70}
+        - {x: -39, y: -40}
+        - {x: -36, y: -106}
+        - {x: -9, y: -128}
+        - {x: 25, y: -128}
+        - {x: 30, y: -118}
+        - {x: 34, y: -94}
+        - {x: 34, y: 38}
+    - name: Legs_WB2
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 1537
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 3, y: -118}
+        - {x: 28, y: -118}
+        - {x: 36, y: -37}
+        - {x: 36, y: 79}
+        - {x: 27, y: 82}
+        - {x: -17, y: 82}
+        - {x: -34, y: 77}
+        - {x: -34, y: -110}
+        - {x: -31, y: -122}
+        - {x: -5, y: -122}
+        - {x: -2, y: -119}
+        - {x: -3, y: -103}
+        - {x: -4, y: -85}
+        - {x: -3, y: -106}
+    - name: Legs_WB3
+      rect:
+        serializedVersion: 2
+        x: 3328
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35, y: 83}
+        - {x: -35, y: -128}
+        - {x: 10, y: -128}
+        - {x: 30, y: -119}
+        - {x: 38, y: -75}
+        - {x: 38, y: 71}
+        - {x: 30, y: 83}
     outline: []
   spritePackingTag: 
   userData: 
