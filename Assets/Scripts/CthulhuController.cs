@@ -162,17 +162,7 @@ public class CthulhuController : MonoBehaviour {
 	public bool penalty()
 	{
         //Debug.Log("Penalty!!");
-
 		return penalize;
-
-		if (!scared)
-			return penalize;
-		else {
-			//scared = false;
-			timeTillPenalty = timeTillPenaltyReset;
-			return false;
-		}
-
 	}
 
 	private float getAngle(Vector3 firstAngle, Vector3 secondAngle)
