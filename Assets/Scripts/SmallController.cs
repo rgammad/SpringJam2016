@@ -61,6 +61,13 @@ public class SmallController : MonoBehaviour {
 		}
 	}
 
+	void OnCollisionEnter2D(Collider2D other)
+	{
+		if (other.gameObject.tag == "Bolt") {
+			Destroy (this.gameObject);
+		}
+	}
+
 	private void move()
 	{
 		this.transform.position += direction * speed * Time.deltaTime;

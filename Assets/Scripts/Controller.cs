@@ -13,6 +13,7 @@ public class Controller : MonoBehaviour {
     private CthulhuController CthulhuScript;
 	public int energyRegen = 5;
 	public float maxHealth = 100.0f;
+	private int hitsTillDeath = 2;
     
 
     // Firing
@@ -56,6 +57,9 @@ public class Controller : MonoBehaviour {
 
 		if (penalty)
 			--energyLeft;
+
+		if (hitsTillDeath <= 0 || energyLeft <= 0)
+			Application.LoadLevel (Application.loadedLevel);
     }
 
 	void onTriggerEnter2D(Collider2D other)
@@ -63,6 +67,15 @@ public class Controller : MonoBehaviour {
 		if (other.gameObject.tag == "Energy") {
 			energyLeft += energyRegen;
 			Destroy (other.gameObject);
+		}
+	}
+
+	void onCollisionEnter2D(Collision2D other)
+	{
+		if (other.gameObject.tag == "Cthulhu"
+			|| other.gameObject.tag == "Smalls") {
+			hitsTillDeath--;
+
 		}
 	}
 
