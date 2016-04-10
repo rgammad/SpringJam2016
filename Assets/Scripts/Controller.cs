@@ -11,11 +11,13 @@ public class Controller : MonoBehaviour {
     private Vector3 velocity;
     private GameObject Cthulhu;
     private CthulhuController CthulhuScript;
+	public int energyRegen = 5;
+	public float maxHealth = 100.0f;
     
 
     // Firing
     public GameObject projectile;   // The game object that will be instantiated
-    public int energyLeft = 64;
+    public int energyLeft = 100;
     public Light lt;
 
     public float fireRate;  // The rate of fire for the player
@@ -40,7 +42,7 @@ public class Controller : MonoBehaviour {
         if (Input.GetButton("Fire1") && Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
-            //lt.intensity -= 0.5f;
+			lt.intensity -= 8/maxHealth;
           
             //Instantiate(GameObject, Position, Rotation);
             Instantiate(projectile, this.gameObject.transform.position, Quaternion.identity);    // Clones a game object and gives it its position and rotation
@@ -50,8 +52,19 @@ public class Controller : MonoBehaviour {
 
         }
 
-        bool random = CthulhuScript.penalty();
+        bool penalty = CthulhuScript.penalty();
+
+		if (penalty)
+			--energyLeft;
     }
+
+	void onTriggerEnter2D(Collider2D other)
+	{
+		if (other.gameObject.tag == "Energy") {
+			energyLeft += energyRegen;
+			Destroy (other.gameObject);
+		}
+	}
 
     void FixedUpdate()
     {
