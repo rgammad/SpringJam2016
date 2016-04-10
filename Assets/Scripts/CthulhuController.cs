@@ -45,7 +45,7 @@ public class CthulhuController : MonoBehaviour {
 		chooseDirection ();
 		move ();
 
-		if (aware.HasGaze)
+		if (beingStaredAt)
 			timeTillPenalty -= Time.deltaTime;
 
 		if (timeTillPenalty <= 0.0)
