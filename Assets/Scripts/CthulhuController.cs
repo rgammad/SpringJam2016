@@ -102,27 +102,51 @@ public class CthulhuController : MonoBehaviour {
 			direction = pathAround (newDirection);
 			}
 
-		float angle = Mathf.Atan2 (direction.y, direction.x) * Mathf.Rad2Deg;
-		transform.rotation = Quaternion.AngleAxis (angle, Vector3.forward);
+//		float angle = Mathf.Atan2 (direction.y, direction.x) * Mathf.Rad2Deg;
+//		transform.rotation = Quaternion.AngleAxis (angle, Vector3.forward);
 		direction = direction.normalized;
 
 	}
 
 	private Vector3 pathAround(Vector3 target)
 	{
-		Vector3 tangent = Vector3.Cross (target, Vector3.forward);
+		Vector3 result = Vector3.Cross (target, Vector3.forward);
 
-		int numTests = 5;
+		int numTests = 40;
+		int weight = 10;
+		int rayDist = 7;
 		float min = Mathf.Infinity;
+		float angleDegrees = 360.0f / (float)numTests;
 
-//		for (int i = 0; i < numTests; ++i) {
-//
-//
-//			if (runGap < min)
-//				min = runGap;
-//		}
+		Vector3[] ARay = new Vector3[numTests];
 
-		return tangent;
+
+		ARay[0] = Quaternion.AngleAxis (angleDegrees, Vector3.forward) * new Vector2(direction.x, direction.y);
+		Debug.DrawRay(this.transform.position, ARay[0].normalized * rayDist, Color.red);
+		Debug.Log (ARay[0]);
+		RaycastHit2D hit = Physics2D.Raycast ((Vector2)this.transform.position, ARay[0], rayDist);
+
+		if (hit.collider == null) {
+			min = getAngle (direction, ARay [0]) + getAngle (direction, target) / weight;
+			result = ARay [0];
+		}
+
+		for (int i = 1; i < numTests; ++i) {
+			float tempMin = getAngle (direction, ARay [i]) + getAngle (direction, target) * weight;
+			ARay[i] = Quaternion.AngleAxis (angleDegrees, Vector3.forward) * new Vector2(ARay[i - 1].x, ARay[i - 1].y);
+			Debug.DrawRay(this.transform.position, ARay[i].normalized * rayDist, Color.red);
+			hit = Physics2D.Raycast ((Vector2)this.transform.position, ARay[i], rayDist);
+
+			if (tempMin < min && hit.collider == null) {
+				min = tempMin;
+				result = ARay [i];
+			}
+				
+
+
+		}
+
+		return result;
 	}
 
 	private void move()
@@ -140,5 +164,16 @@ public class CthulhuController : MonoBehaviour {
 			timeTillPenalty = timeTillPenaltyReset;
 			return false;
 		}
+	}
+
+	private float getAngle(Vector3 firstAngle, Vector3 secondAngle)
+	{
+		float result = 0.0f;
+
+		float temp = Vector3.Dot (firstAngle, secondAngle);
+		temp /= Vector3.Dot(firstAngle.normalized, secondAngle.normalized);
+		temp = Mathf.Acos (temp) * Mathf.Rad2Deg;
+
+		return result;
 	}
 }
