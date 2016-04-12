@@ -4,13 +4,15 @@ using System.Collections;
 public class Controller : MonoBehaviour {
 
 	public float moveSpeed = 6;
-    
+    public int deduct = 10;
+    public float litLoss;
 
 	private Rigidbody myRigidbody;
     private Camera viewCamera;
     private Vector3 velocity;
     private GameObject Cthulhu;
     private CthulhuController CthulhuScript;
+    
 
 	public int energyRegen = 5;
 	public float maxHealth = 100.0f;
@@ -46,9 +48,10 @@ public class Controller : MonoBehaviour {
         // Time.time > nextFire - if enough time has passed since the last time the player has fired, player can fire again
         if (Input.GetButton("Fire1") && Time.time > nextFire)
         {
+            reduceEnergy();
             nextFire = Time.time + fireRate;
 
-            lt.intensity -= .08f;
+            lt.intensity -= litLoss;
 
 			lt.intensity -= 8/maxHealth;
 
@@ -61,7 +64,7 @@ public class Controller : MonoBehaviour {
 
     public void reduceEnergy()
     {
-        energyLeft--;
+        energyLeft -= deduct;
         Debug.Log(energyLeft);
         if (energyLeft <= 0)
         {
