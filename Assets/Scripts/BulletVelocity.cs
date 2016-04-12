@@ -41,9 +41,11 @@ public class BulletVelocity : MonoBehaviour {
         if (other.gameObject.tag == "Wall")
             Destroy(gameObject);
 
-        if (other.gameObject.tag == "Targets")
+        if (other.gameObject.tag == "Smalls")
         {
             Destroy(gameObject);
+            Destroy(other.gameObject);
+
         }
     }
 }

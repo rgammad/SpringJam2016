@@ -41,16 +41,19 @@ public class CthulhuController : MonoBehaviour {
 		}
 
 		//move
-		playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+		playerPos = player.transform.position;
 		chooseDirection ();
 		move ();
 
-		if (aware.HasGaze)
+		if (beingStaredAt)
 			timeTillPenalty -= Time.deltaTime;
 
 		if (timeTillPenalty <= 0.0)
 			penalize = true;
 
+        if (penalize)
+            player.GetComponent<Controller>().reduceEnergy();
 
 	}
 
@@ -162,6 +165,7 @@ public class CthulhuController : MonoBehaviour {
 	public bool penalty()
 	{
         //Debug.Log("Penalty!!");
+
 		return penalize;
 	}
 
